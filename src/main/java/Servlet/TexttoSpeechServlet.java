@@ -45,7 +45,7 @@ public class TexttoSpeechServlet extends HttpServlet {
 				osConnector.createContainer("containerName");
 				 Payload upfile = null;
 				 upfile = Payloads.create(speech);
-				 osConnector.uploadFile("containerName", "texttospeech", upfile);
+				 osConnector.uploadFile("containerName", "texttospeech.wav", upfile);
 				
 			
 			
