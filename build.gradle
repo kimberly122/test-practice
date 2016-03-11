@@ -39,6 +39,7 @@ dependencies {
 	compile 'org.pacesys:openstack4j:2.10'
 	compile 'org.pacesys.openstack4j.connectors:openstack4j-jersey2:2.10'
 	compile 'org.pacesys.openstack4j.connectors:openstack4j-httpclient:2.10'
+	compile 'cn.guoyukun.jdbc:db2jcc:1.4.2'
 	
     testCompile 'junit:junit:4.12'   
 	
