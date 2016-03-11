@@ -1,5 +1,6 @@
 package Servlet;
 
+import Bean.CloudantClientClass;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
