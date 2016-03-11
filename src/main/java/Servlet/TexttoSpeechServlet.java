@@ -24,7 +24,7 @@ import org.openstack4j.model.common.Payloads;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONObject;
 
-@WebServlet(name = "LanguageTranslationServlet", urlPatterns = {"/LanguageTranslationServlet"})
+@WebServlet(name = "TexttoSpeechServlet", urlPatterns = {"/TexttoSpeechServlet"})
   
 public class TexttoSpeechServlet extends HttpServlet {
 	
