@@ -80,6 +80,9 @@ public class LanguageTranslationServlet extends HttpServlet {
 				request.setAttribute("trans", translation);
 				request.setAttribute("wordCount", word_count);
 				
+				PrintWriter writer = response.getWriter();
+				DBHelper db = new DBHelper(writer);
+				db.insertInto(character_count, translation);
 				
 			} catch (Exception e) {
 				e.printStackTrace(System.err);
