@@ -34,9 +34,14 @@ public class LanguageTranslationServlet extends HttpServlet {
             //TranslationResult translated = languageTranslation.translate("hello", "en", "es");
 			String translatedText = translated.toString();
 			
+			
+			
 			request.setAttribute("outputText",translatedText);
 			try{
-				CloudantClientClass db = new CloudantClientClass();
+				//int result;
+			CloudantClientClass Cloudantdb = new CloudantClientClass();
+		 Cloudantdb.addEntry(translatedText);
+				/*CloudantClientClass db = new CloudantClientClass();
 				
 				int addStat;
 				addStat = db.addEntry(translatedText);
@@ -50,6 +55,7 @@ public class LanguageTranslationServlet extends HttpServlet {
 				
 								
 				dashdb.addWords(product);
+				*/
 				
 				
 			} catch (Exception e) {
@@ -66,7 +72,7 @@ public class LanguageTranslationServlet extends HttpServlet {
 			request.getRequestDispatcher("langtransindex.jsp").forward(request,response);
         //processRequest(request, response);
     }
-    
+/*    
     public String test(){
     	LanguageTranslatorConnector connector = new LanguageTranslatorConnector();
     	LanguageTranslation languageTranslation = new LanguageTranslation();
@@ -76,6 +82,7 @@ public class LanguageTranslationServlet extends HttpServlet {
     	
     	return translatedText;
     }
+	*/
 	
 	
 
