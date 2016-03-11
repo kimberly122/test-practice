@@ -14,8 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.json.simple.parser.JSONParser;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 @WebServlet(name = "LanguageTranslationServlet", urlPatterns = {"/LanguageTranslationServlet"})
   
@@ -39,8 +41,8 @@ public class LanguageTranslationServlet extends HttpServlet {
 			request.setAttribute("outputText",translatedText);
 			try{
 				
-				CloudantClientClass Cloudantdb = new CloudantClientClass();
-				Cloudantdb.addEntry(translatedText);
+				//CloudantClientClass Cloudantdb = new CloudantClientClass();
+				//Cloudantdb.addEntry(translatedText);
 				/*CloudantClientClass db = new CloudantClientClass();
 				
 				int addStat;
@@ -56,7 +58,23 @@ public class LanguageTranslationServlet extends HttpServlet {
 								
 				dashdb.addWords(product);
 				*/
-				
+				JSONParser parser = new JSONParser();
+				Object obj = parser.parse(translatedText);
+            
+				JSONObject jsonObject = (JSONObject) obj;
+				System.out.println(jsonObject.toString());
+            
+				String character_count = jsonObject.get("character_count").toString();
+				alert("character_count: " + character_count);
+            
+				//JSONarray []
+				JSONArray jsonArray = (JSONArray) jsonObject.get("translations");
+				JSONObject jsonObject1 = (JSONObject) jsonArray.get(0);
+				String translation = jsonObject1.get("translation").toString();
+				alert("translation: " + translation);
+            
+				String word_count = jsonObject.get("word_count").toString();
+				alert("word_count: " + word_count);
 				
 			} catch (Exception e) {
 				e.printStackTrace(System.err);
