@@ -17,7 +17,15 @@
 				if (request.getAttribute("outputText") != null){
 					out.println("<h1>"+request.getAttribute("outputText")+"</h1>");
 				}
-				
+				if(request.getAttribute("charCount") != null){
+					out.println("<h1>"+request.getAttribute("charCount")+"</h1>");
+				}
+				if(request.getAttribute("trans") != null){
+					out.println("<h1>"+request.getAttribute("trans")+"</h1>");
+				}
+				if(request.getAttribute("wordCount") != null){
+					out.println("<h1>"+request.getAttribute("wordCount")+"</h1>");
+				}
 			%>
         </div>
     </body>

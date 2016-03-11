@@ -65,16 +65,21 @@ public class LanguageTranslationServlet extends HttpServlet {
 				System.out.println(jsonObject.toString());
             
 				String character_count = jsonObject.get("character_count").toString();
-				alert("character_count: " + character_count);
+				//("character_count: " + character_count);
             
 				//JSONarray []
 				JSONArray jsonArray = (JSONArray) jsonObject.get("translations");
 				JSONObject jsonObject1 = (JSONObject) jsonArray.get(0);
 				String translation = jsonObject1.get("translation").toString();
-				alert("translation: " + translation);
+				//alert("translation: " + translation);
             
 				String word_count = jsonObject.get("word_count").toString();
-				alert("word_count: " + word_count);
+				//alert("word_count: " + word_count);
+				
+				request.setAttribute("charCount", character_count);
+				request.setAttribute("trans", translation);
+				request.setAttribute("wordCount", word_count);
+				
 				
 			} catch (Exception e) {
 				e.printStackTrace(System.err);
