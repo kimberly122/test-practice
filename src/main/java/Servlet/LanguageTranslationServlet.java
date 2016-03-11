@@ -38,9 +38,9 @@ public class LanguageTranslationServlet extends HttpServlet {
 			
 			request.setAttribute("outputText",translatedText);
 			try{
-				//int result;
-			CloudantClientClass Cloudantdb = new CloudantClientClass();
-		 Cloudantdb.addEntry(translatedText);
+				
+				CloudantClientClass Cloudantdb = new CloudantClientClass();
+				Cloudantdb.addEntry(translatedText);
 				/*CloudantClientClass db = new CloudantClientClass();
 				
 				int addStat;
